@@ -3,8 +3,16 @@
     %tr
       %th Title
       %th Description
+      %th Actions
   %tbody  
     -@articles.each do |article|
       %tr
         %td=article.title
         %td=article.description
+        %td
+          %ul
+            %li= link_to 'show', article_path(article)
+            %li= link_to "edit", edit_article_path(article)
+            %li= link_to "delete", article_path(article), { method: :delete }
+
+%li= link_to "Create article", new_article_path

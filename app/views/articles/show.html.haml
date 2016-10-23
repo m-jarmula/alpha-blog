@@ -1,0 +1,13 @@
+%h1= "Show article #{@article.title}"
+%table
+  %thead
+    %tr
+      %th Title
+      %th Description
+  %tbody
+    %tr
+      %td= @article.title
+      %td= @article.description
+      
+= link_to "Article list", articles_path
+= link_to "Edit this article", edit_article_path(@article)

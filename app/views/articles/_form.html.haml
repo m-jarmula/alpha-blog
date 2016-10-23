@@ -1,0 +1,11 @@
+=form_for @article do |f|
+  %div
+    =f.label :title
+    %br
+    =f.text_field :title
+  %div
+    =f.label :description
+    %br
+    =f.text_area :description
+  %div
+    =f.submit
