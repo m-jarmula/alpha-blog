@@ -1,0 +1,10 @@
+%table
+  %thead
+    %tr
+      %th Title
+      %th Description
+  %tbody  
+    -@articles.each do |article|
+      %tr
+        %td=article.title
+        %td=article.description
