@@ -1,10 +1,5 @@
 %h1 Create an article
 
-%ul
-  -if @article.errors.any?
-    -@article.errors.full_messages.each do |msg|
-      %li= msg
-
 = render 'form'
     
 = link_to "Article list", articles_path
