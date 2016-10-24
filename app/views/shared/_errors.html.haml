@@ -1,0 +1,10 @@
+-if obj.errors.any?
+  .row
+    .col-xs-8.col-xs-offset-2
+      .panel.panel-danger
+        .panel-heading
+          %h2.panel-title= pluralize(obj.errors.count, "error")
+          .panel-body
+            %ul
+              -obj.errors.full_messages.each do |msg|
+                %li= msg

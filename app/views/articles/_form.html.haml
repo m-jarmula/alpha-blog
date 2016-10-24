@@ -1,10 +1,7 @@
-%ul
-  -if @article.errors.any?
-    -@article.errors.full_messages.each do |msg|
-      %li= msg
+=render 'shared/errors', obj: @article
 .row
   .col-mxs-12
-    =form_for(@article, :html => { class: "form-horizontal", role: "form" }) do |f|
+    =form_for(@article, html: { class: "form-horizontal", role: "form" }) do |f|
       .form-group
         .control-label.col-sm-2
           =f.label :title
