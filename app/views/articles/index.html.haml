@@ -1,18 +1,12 @@
-%table
-  %thead
-    %tr
-      %th Title
-      %th Description
-      %th Actions
-  %tbody  
-    -@articles.each do |article|
-      %tr
-        %td=article.title
-        %td=article.description
-        %td
-          %ul
-            %li= link_to 'show', article_path(article)
-            %li= link_to "edit", edit_article_path(article)
-            %li= link_to "delete", article_path(article), { method: :delete, data: {confirm: "Are your sure ?"} }
 
-%li= link_to "Create article", new_article_path
+%h1 List all articles
+-@articles.each do |article|
+  .row
+    .col-xs-8.col-xs-offset-2
+      .well.well-lg
+        .article-title= link_to article.title, article_path(article)
+        .article-body= truncate(article.description, length: 100)
+        .article-actions    
+          = link_to "Show this article", article_path(article), class: 'btn btn-xs btn-default'
+          = link_to "Edit this article", edit_article_path(article), class: 'btn btn-xs btn-success'
+          = link_to "Delete this article", article_path(article), { method: :delete, data: { confirm: "Are you sure ?"}, class: 'btn btn-xs btn-danger' }
