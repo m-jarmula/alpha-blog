@@ -12,5 +12,6 @@
             %hr
         .article-actions    
           = link_to "Show this article", article_path(article), class: 'btn btn-xs btn-default'
-          = link_to "Edit this article", edit_article_path(article), class: 'btn btn-xs btn-success'
-          = link_to "Delete this article", article_path(article), { method: :delete, data: { confirm: "Are you sure ?"}, class: 'btn btn-xs btn-danger' }
+          - if logged_in? && article.user == current_user 
+            = link_to "Edit this article", edit_article_path(article), class: 'btn btn-xs btn-success'
+            = link_to "Delete this article", article_path(article), { method: :delete, data: { confirm: "Are you sure ?"}, class: 'btn btn-xs btn-danger' }
