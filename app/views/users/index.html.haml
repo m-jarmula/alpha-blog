@@ -1,3 +1,5 @@
 %h1.center All alpha blogers
+.center= will_paginate
 - @users.each do |user|
   = render 'user', user: user
+.center= will_paginate
