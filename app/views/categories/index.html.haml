@@ -1,0 +1,8 @@
+%h1.center Listing all categories
+= will_paginate
+- @categories.each do |category|
+  %ul.listing
+    .row
+      .well.coll-md-4.col-offset-4
+        .article-title= link_to category.name, category_path(category)
+= will_paginate

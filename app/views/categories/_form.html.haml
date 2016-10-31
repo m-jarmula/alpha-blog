@@ -1,0 +1,12 @@
+=render 'shared/errors', obj: @category
+.row
+  .col-mxs-12
+    =form_for(@category, html: { class: "form-horizontal", role: "form" }) do |f|
+      .form-group
+        .control-label.col-sm-2
+          =f.label :name
+        .col-sm-8
+          =f.text_field :name, class: 'form-control', placeholder: "Category name", autofocus: true
+      .form-group
+        .col-sm-10.col-sm-offset-2
+          =f.submit class: 'btn btn-primary btn-large'
