@@ -5,4 +5,8 @@ module ApplicationHelper
     gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{options[:size]}"
     image_tag gravatar_url, alt: user.username, class: "img-circle"
   end
+  
+  def all_categories
+    Category.all
+  end
 end
