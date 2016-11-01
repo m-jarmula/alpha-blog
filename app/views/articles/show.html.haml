@@ -5,6 +5,8 @@
     %strong Description:
     %hr
     = simple_format @article.description
+    - if @article.categories.any?
+      %p= raw("Categories: #{render article.categories}")
     .article-actions    
       = link_to "Article list", articles_path, class: 'btn btn-xs btn-primary'
       - if logged_in? && (@article.user == current_user || current_user.admin?) 

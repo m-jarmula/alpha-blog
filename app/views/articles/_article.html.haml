@@ -10,6 +10,8 @@
             %small= "Created by #{article.user.username if article.user}"
             = "last updated #{time_ago_in_words(article.created_at)} ago"
             %hr
+        -if article.categories.any?
+          %p= raw("Categories: #{render article.categories}")
         .article-actions    
           = link_to "Show this article", article_path(article), class: 'btn btn-xs btn-default'
           - if logged_in? && (article.user == current_user || current_user.admin?) 

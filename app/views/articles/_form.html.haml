@@ -8,6 +8,11 @@
         .col-sm-8
           =f.text_field :title, class: 'form-control', placeholder: "Title of article", autofocus: true
       .form-group
+        .row
+          .col-sm-8.col-sm-offset-2
+            =f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb|
+              =cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class: "checkobox") + cb.text} 
+      .form-group
         .control-label.col-sm-2
           =f.label :description
         .col-sm-8
